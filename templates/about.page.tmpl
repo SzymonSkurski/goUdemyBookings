@@ -1,0 +1,19 @@
+{{template "base" .}}
+
+{{define "content"}}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>About</h1>
+        <p>injected data <b>{{index .StringMap "test"}}</b></p>
+        <p>
+          {{if ne (index .StringMap "remote_ip") ""}}
+            remote IP: <b>{{index .StringMap "remote_ip"}}</b>
+          {{else}}
+            <b>remote IP: unknown</b> Visit homepage <a href="/">Home page</a>
+          {{end}}
+        </p>
+      </div>
+    </div>
+  </div>
+{{end}}
